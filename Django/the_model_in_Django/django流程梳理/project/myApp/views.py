@@ -5,4 +5,6 @@ from .models import Grades,Students
 def welcome(request):
     return render(request,'myApp/welcome.html')
 
-
+def students(request):
+    studentsList=Students.stuObj2.all()
+    return render(request,'myApp/students.html',{'students':studentsList})
