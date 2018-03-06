@@ -24,11 +24,12 @@ from django.db.models import Max
 def studentsearch(request):
     #studentsList=Students.stuObj2.filter(sname__startswith="林")
     #studentsList=Students.stuObj2.filter(sname__contains="周")
-    studentsList=Students.stuObj2.filter(pk__in=[1])
-    maxPk=Students.stuObj2.aggregate(Max('id'))
-    print(maxPk)
+    #studentsList=Students.stuObj2.filter(pk__in=[1])
+    #maxPk=Students.stuObj2.aggregate(Max('id'))
+    #print(maxPk)
     #studentsList=Students.stuObj2.filter(lastTime__year=2017)
-    #studentsList = Students.stuObj2.filter(students__scontend__contains="周杰伦")
+    #描述班级里带有周杰伦三个字的学生的班级对象
+    studentsList = Grades.objects.filter(students__scontend__contains="周杰伦")
     return render(request,'myApp/students.html',{'students':studentsList})
 
 
