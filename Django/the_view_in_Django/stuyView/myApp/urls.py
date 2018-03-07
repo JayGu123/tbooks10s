@@ -10,4 +10,8 @@ urlpatterns=[
     re_path(r'^showregister/$', views.showregister),
     re_path(r'^showregister/register/$',views.register),
     re_path(r'^showresponse/$',views.showresponse),
+    re_path('^cookietest/$',views.cookietest),
+    re_path('^redirect1/$',views.redirect1),
+    re_path('^redirect2/$',views.redirect2),
+
 ]

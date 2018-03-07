@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 
 # Create your views here.
@@ -53,3 +53,20 @@ def showresponse(request):
     print(res.status_code)
     print(res.content-type)
     return res
+#cookies
+def cookietest(request):
+    res = HttpResponse()
+    cookie = res.COOKIES
+    res.write("<h1>"+cookie['jay']+"<h1/>")
+    #cookie = res.set_cookie("jay","singer")
+    return res
+
+
+#重定向
+from django.http import HttpResponseRedirect， JsonResponse
+from django.shortcuts import redirect
+def redirect1(request):
+    #return HttpResponseRedirect("jay/redirect2")
+    return redirect('/jay/redirect2/')
+def redirect2(request):
+    return HttpResponse('重定向后的视图')
