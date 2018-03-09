@@ -63,10 +63,35 @@ def cookietest(request):
 
 
 #重定向
-from django.http import HttpResponseRedirect， JsonResponse
+from django.http import HttpResponseRedirect,JsonResponse
 from django.shortcuts import redirect
 def redirect1(request):
     #return HttpResponseRedirect("jay/redirect2")
-    return redirect('/jay/redirect2/')
+    return redirect('/redirect2/')
 def redirect2(request):
     return HttpResponse('重定向后的视图')
+
+
+
+#session
+def index(request):
+    #取session
+    username = request.session.get('name','游客')
+    return render(request, 'myApp/index.html',{'username':username})
+def login(request):
+    return render(request, 'myApp/login.html')
+def showindex(request):
+    print('*****')
+    username = request.POST.get('username')
+    print(username)
+    #存储session
+    request.session['name'] = username
+    request.session.set_expire(0)
+    return redirect('/index/')
+from django.contrib.auth import logout
+def quit(request):
+    #清除session
+    logout(request)
+    #request.session.clear()
+    #request.session.flush()
+    return redirect('/index/')

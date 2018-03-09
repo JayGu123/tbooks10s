@@ -13,5 +13,9 @@ urlpatterns=[
     re_path('^cookietest/$',views.cookietest),
     re_path('^redirect1/$',views.redirect1),
     re_path('^redirect2/$',views.redirect2),
+    re_path('^index/$',views.index),
+    re_path('^login/$',views.login),
+    re_path('^showindex/$',views.showindex),
+    re_path('^quit/$', views.quit),
 
 ]

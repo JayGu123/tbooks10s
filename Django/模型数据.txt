@@ -1,0 +1,4 @@
+insert into grades(gname,gdate,ggirlnum,gboynum,isDelete) values ("python01","2018-3-5",10,50,0),("python02","2018-3-5",4,34,0),("python03","2018-3-5",12,60,0),("python04","2018-3-5",3,75,0)
+
+insert into students (sname,sgender,scontend,isDelete,sgrade_id,sage) values ("羽翼",0,"我叫羽翼",0,1,20),("股权",1,"我叫股权",0,2,30),("赵伟",1,"我叫赵威",0,3,30),("刘川波",0,"我叫刘川波",0,4,18),("朱为勇",0,"我叫朱为勇",0,4,16),("卢建松",1,"我叫卢建松",0,1,50)
+
