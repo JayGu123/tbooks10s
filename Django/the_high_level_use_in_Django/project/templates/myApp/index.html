@@ -1,0 +1,17 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/css/style.css' %}"/>
+    {% comment %}
+    <script type="text/javascript" src=""></script>
+    {% endcomment %}
+    <script type="text/javascript" src="{% static 'myApp/js/jay.js'%}"></script>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <img src="{% static 'myApp/image/timg.jpg' %}"/>
+</body>
+</html>
